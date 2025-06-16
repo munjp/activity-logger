@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.name-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.name-section label {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.name-section input {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    min-width: 250px;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.name-section input:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+main {
+    padding: 40px;
+}
+
+.hour-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 5px solid #4facfe;
+    transition: all 0.3s ease;
+}
+
+.hour-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hour-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hour-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.productivity-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+.star.filled {
+    color: #ffd700;
+}
+
+.activity-description {
+    margin-bottom: 20px;
+}
+
+.activity-description label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.activity-description textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.3s ease;
+}
+
+.activity-description textarea:focus {
+    outline: none;
+    border-color: #4facfe;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-item label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.metric-item input {
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.metric-item input:focus {
+    outline: none;
+    border-color: #4facfe;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.2);
+}
+
+.submit-section {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #e9ecef;
+}
+
+#submitBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+#submitBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+#submitBtn:active {
+    transform: translateY(-1px);
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.notification.info {
+    background: #17a2b8;
+}
+
+.notification.error {
+    background: #dc3545;
+}
+
+.notification.hidden {
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+}
+
+#closeNotification {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    header {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .name-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .name-section input {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hour-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+
+/* Slack Integration Styles */
+.slack-info {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border-radius: 8px;
+    border: 1px solid #20c997;
+}
+
+.slack-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.slack-icon {
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.slack-text {
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button-group button {
+    flex: 1;
+    min-width: 200px;
+}
+
+#slackOnlyBtn {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#slackOnlyBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+#slackOnlyBtn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .button-group button {
+        min-width: auto;
+    }
+    
+    .slack-status {
+        font-size: 1rem;
+    }
+    
+    .slack-icon {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Dealership Info Styles */
+.dealership-info {
+    margin-bottom: 20px;
+}
+
+.dealership-badge {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px 20px;
+    color: white;
+    justify-content: space-between;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dealership-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.dealership-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dealership-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 2px;
+}
+
+.dealership-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.checkout-btn {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 8px 15px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.checkout-icon {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .dealership-badge {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .dealership-text {
+        align-items: center;
+    }
+    
+    .checkout-btn {
+        align-self: stretch;
+        justify-content: center;
+    }
+}
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealership Check-in</title>
+    <link rel="stylesheet" href="checkin-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Dealership Check-in</h1>
+            <p class="subtitle">Select your dealership and verify your location to continue</p>
+        </header>
+
+        <main class="main-content">
+            <div class="checkin-card">
+                <div class="step-indicator">
+                    <div class="step active" id="step1">
+                        <span class="step-number">1</span>
+                        <span class="step-text">Select Dealership</span>
+                    </div>
+                    <div class="step" id="step2">
+                        <span class="step-number">2</span>
+                        <span class="step-text">Verify Location</span>
+                    </div>
+                    <div class="step" id="step3">
+                        <span class="step-number">3</span>
+                        <span class="step-text">Check In</span>
+                    </div>
+                </div>
+
+                <form id="checkinForm" class="checkin-form">
+                    <div class="form-section" id="dealershipSelection">
+                        <label for="dealership" class="form-label">
+                            <span class="label-icon">🏢</span>
+                            Select Your Dealership
+                        </label>
+                        <select id="dealership" name="dealership" class="dealership-select" required>
+                            <option value="">Choose a dealership...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-section" id="locationSection" style="display: none;">
+                        <div class="location-status">
+                            <div class="status-icon" id="locationIcon">📍</div>
+                            <div class="status-text">
+                                <h3 id="locationTitle">Verifying Location...</h3>
+                                <p id="locationMessage">Please allow location access when prompted</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-details" id="locationDetails" style="display: none;">
+                            <div class="detail-item">
+                                <span class="detail-label">Your Location:</span>
+                                <span class="detail-value" id="userLocation">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Dealership:</span>
+                                <span class="detail-value" id="dealershipLocation">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Distance:</span>
+                                <span class="detail-value" id="distance">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-section">
+                        <button type="button" id="verifyLocationBtn" class="btn btn-primary" style="display: none;">
+                            <span class="btn-icon">📍</span>
+                            Verify Location
+                        </button>
+                        
+                        <button type="submit" id="checkinBtn" class="btn btn-success" style="display: none;">
+                            <span class="btn-icon">✅</span>
+                            Check In
+                        </button>
+                        
+                        <button type="button" id="retryBtn" class="btn btn-secondary" style="display: none;">
+                            <span class="btn-icon">🔄</span>
+                            Try Again
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <div id="notification" class="notification hidden">
+        <span id="notificationText"></span>
+        <button id="closeNotification">&times;</button>
+    </div>
+
+    <script src="checkin-script.js"></script>
+</body>
+</html>
+

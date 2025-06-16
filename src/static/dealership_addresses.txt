@@ -1,0 +1,71 @@
+Dealership Addresses:
+
+1. 401 Infiniti: 5500 Dixie Road, Unit D, Mississauga, Ontario, L4W 4N3
+
+
+2. 401 Kia: 5500 Dixie Rd Unit C, Mississauga, Ontario, L4W 4N3
+
+
+3. 401 Mazda: 5500 Dixie Rd F, Mississauga, Ontario, L4W 4N3
+
+
+4. 401 Mitsubishi (Dixie Mitsubishi): 5525 Ambler Drive, Mississauga, Ontario, L4W 3Z1
+
+
+5. 401 Nissan: 5500 Dixie Road, Unit B, Mississauga, Ontario, L4W 4N3
+
+
+6. 401 Volkswagen: 5500 Dixie Rd, Mississauga, Ontario, L4W 4N3
+
+
+7. Agincourt Mazda: 5500 Finch Ave E, Scarborough, Ontario, M1S 0C7
+
+
+8. Audi Barrie: 2484 Doral Drive, Innisfil, ON L9S 0A3
+
+
+9. Audi Queensway: 1635 The Queensway, Etobicoke, ON M8Z 1T8
+
+
+10. Audi Thornhill: 7064 Yonge Street, Thornhill, ON L4J 1V7
+
+
+11. Barrie Volkswagen: 60 Fairview Road, Barrie, Ontario, L4N 8X8
+
+
+12. BMW Aurora: 56 Sunday Drive, Aurora, Ontario, L4G 4A2
+
+
+13. Bolton Toyota: 12050 Albion Vaughan Road, Bolton, Ontario, L7E 1S7
+
+
+14. Frost GM: 150 Bovaird Dr W, Brampton, Ontario, L7A 0H3
+
+
+15. Markham Acura: 5201 Highway 7 East, Markham, Ontario, L3R 1N3
+
+
+16. Markham Honda: 8220 Kennedy Road, Markham, Ontario, L3R 5X3
+
+
+17. Markham Kia: 8210 Kennedy Rd, Markham, ON L3R 5X3
+
+
+18. Meadowvale Honda: 2210 Battleford Road, Mississauga, Ontario, L5N 3K6
+
+
+19. Oakville Honda: 500 Iroquois Shore Road, Oakville, Ontario, L6H 2Y7
+
+
+20. Thorncrest Ford: 1575 The Queensway, Etobicoke, Toronto, Ontario, M8Z 1T9
+
+
+21. Vaughan Chrysler: 1 Auto Park Circle, Woodbridge, Ontario, L4L 8R1
+
+
+
+
+22. Test Site: 439 Crosby Ave, Richmond Hill, ON, Canada
+
+
+
