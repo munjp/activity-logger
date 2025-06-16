@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Activity Logger</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daily Activity Logger</h1>
+            <div id="dealershipInfo" class="dealership-info" style="display: none;">
+                <div class="dealership-badge">
+                    <span class="dealership-icon">🏢</span>
+                    <span class="dealership-text">
+                        <span class="dealership-label">Checked in at:</span>
+                        <span class="dealership-name" id="dealershipName">-</span>
+                    </span>
+                    <button type="button" id="checkoutBtn" class="checkout-btn">
+                        <span class="checkout-icon">🚪</span>
+                        Check Out
+                    </button>
+                </div>
+            </div>
+            <div class="name-section">
+                <label for="userName">Name:</label>
+                <input type="text" id="userName" placeholder="Enter your name" required>
+            </div>
+        </header>
+
+        <main>
+            <form id="activityForm">
+                <!-- Hour 1 -->
+                <div class="hour-section">
+                    <div class="hour-header">
+                        <h3 class="hour-title">Hour 1</h3>
+                        <div class="productivity-rating">
+                            <span>Productivity:</span>
+                            <div class="stars" data-hour="0">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-description">
+                        <label for="description_0">Activity Description:</label>
+                        <textarea id="description_0" name="description_0" placeholder="Describe your activities during this hour..."></textarea>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <label for="quote_calls_0"># of Quote Calls:</label>
+                            <input type="number" id="quote_calls_0" name="quote_calls_0" min="0" value="0" data-hour="0" data-metric="quote_calls">
+                        </div>
+                        <div class="metric-item">
+                            <label for="appointments_generated_0"># of Appointments Generated:</label>
+                            <input type="number" id="appointments_generated_0" name="appointments_generated_0" min="0" value="0" data-hour="0" data-metric="appointments_generated">
+                        </div>
+                        <div class="metric-item">
+                            <label for="in_person_appointments_0"># of In Person Appointments:</label>
+                            <input type="number" id="in_person_appointments_0" name="in_person_appointments_0" min="0" value="0" data-hour="0" data-metric="in_person_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="phone_appointments_0"># of Phone Appointments:</label>
+                            <input type="number" id="phone_appointments_0" name="phone_appointments_0" min="0" value="0" data-hour="0" data-metric="phone_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_sold_0"># of Cars Sold:</label>
+                            <input type="number" id="cars_sold_0" name="cars_sold_0" min="0" value="0" data-hour="0" data-metric="cars_sold">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_delivered_0"># of Cars Delivered:</label>
+                            <input type="number" id="cars_delivered_0" name="cars_delivered_0" min="0" value="0" data-hour="0" data-metric="cars_delivered">
+                        </div>
+                        <div class="metric-item">
+                            <label for="advertisements_posted_0"># of Advertisements Posted:</label>
+                            <input type="number" id="advertisements_posted_0" name="advertisements_posted_0" min="0" value="0" data-hour="0" data-metric="advertisements_posted">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hour 2 -->
+                <div class="hour-section">
+                    <div class="hour-header">
+                        <h3 class="hour-title">Hour 2</h3>
+                        <div class="productivity-rating">
+                            <span>Productivity:</span>
+                            <div class="stars" data-hour="1">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-description">
+                        <label for="description_1">Activity Description:</label>
+                        <textarea id="description_1" name="description_1" placeholder="Describe your activities during this hour..."></textarea>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <label for="quote_calls_1"># of Quote Calls:</label>
+                            <input type="number" id="quote_calls_1" name="quote_calls_1" min="0" value="0" data-hour="1" data-metric="quote_calls">
+                        </div>
+                        <div class="metric-item">
+                            <label for="appointments_generated_1"># of Appointments Generated:</label>
+                            <input type="number" id="appointments_generated_1" name="appointments_generated_1" min="0" value="0" data-hour="1" data-metric="appointments_generated">
+                        </div>
+                        <div class="metric-item">
+                            <label for="in_person_appointments_1"># of In Person Appointments:</label>
+                            <input type="number" id="in_person_appointments_1" name="in_person_appointments_1" min="0" value="0" data-hour="1" data-metric="in_person_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="phone_appointments_1"># of Phone Appointments:</label>
+                            <input type="number" id="phone_appointments_1" name="phone_appointments_1" min="0" value="0" data-hour="1" data-metric="phone_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_sold_1"># of Cars Sold:</label>
+                            <input type="number" id="cars_sold_1" name="cars_sold_1" min="0" value="0" data-hour="1" data-metric="cars_sold">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_delivered_1"># of Cars Delivered:</label>
+                            <input type="number" id="cars_delivered_1" name="cars_delivered_1" min="0" value="0" data-hour="1" data-metric="cars_delivered">
+                        </div>
+                        <div class="metric-item">
+                            <label for="advertisements_posted_1"># of Advertisements Posted:</label>
+                            <input type="number" id="advertisements_posted_1" name="advertisements_posted_1" min="0" value="0" data-hour="1" data-metric="advertisements_posted">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hour 3 -->
+                <div class="hour-section">
+                    <div class="hour-header">
+                        <h3 class="hour-title">Hour 3</h3>
+                        <div class="productivity-rating">
+                            <span>Productivity:</span>
+                            <div class="stars" data-hour="2">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-description">
+                        <label for="description_2">Activity Description:</label>
+                        <textarea id="description_2" name="description_2" placeholder="Describe your activities during this hour..."></textarea>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <label for="quote_calls_2"># of Quote Calls:</label>
+                            <input type="number" id="quote_calls_2" name="quote_calls_2" min="0" value="0" data-hour="2" data-metric="quote_calls">
+                        </div>
+                        <div class="metric-item">
+                            <label for="appointments_generated_2"># of Appointments Generated:</label>
+                            <input type="number" id="appointments_generated_2" name="appointments_generated_2" min="0" value="0" data-hour="2" data-metric="appointments_generated">
+                        </div>
+                        <div class="metric-item">
+                            <label for="in_person_appointments_2"># of In Person Appointments:</label>
+                            <input type="number" id="in_person_appointments_2" name="in_person_appointments_2" min="0" value="0" data-hour="2" data-metric="in_person_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="phone_appointments_2"># of Phone Appointments:</label>
+                            <input type="number" id="phone_appointments_2" name="phone_appointments_2" min="0" value="0" data-hour="2" data-metric="phone_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_sold_2"># of Cars Sold:</label>
+                            <input type="number" id="cars_sold_2" name="cars_sold_2" min="0" value="0" data-hour="2" data-metric="cars_sold">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_delivered_2"># of Cars Delivered:</label>
+                            <input type="number" id="cars_delivered_2" name="cars_delivered_2" min="0" value="0" data-hour="2" data-metric="cars_delivered">
+                        </div>
+                        <div class="metric-item">
+                            <label for="advertisements_posted_2"># of Advertisements Posted:</label>
+                            <input type="number" id="advertisements_posted_2" name="advertisements_posted_2" min="0" value="0" data-hour="2" data-metric="advertisements_posted">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hour 4 -->
+                <div class="hour-section">
+                    <div class="hour-header">
+                        <h3 class="hour-title">Hour 4</h3>
+                        <div class="productivity-rating">
+                            <span>Productivity:</span>
+                            <div class="stars" data-hour="3">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-description">
+                        <label for="description_3">Activity Description:</label>
+                        <textarea id="description_3" name="description_3" placeholder="Describe your activities during this hour..."></textarea>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <label for="quote_calls_3"># of Quote Calls:</label>
+                            <input type="number" id="quote_calls_3" name="quote_calls_3" min="0" value="0" data-hour="3" data-metric="quote_calls">
+                        </div>
+                        <div class="metric-item">
+                            <label for="appointments_generated_3"># of Appointments Generated:</label>
+                            <input type="number" id="appointments_generated_3" name="appointments_generated_3" min="0" value="0" data-hour="3" data-metric="appointments_generated">
+                        </div>
+                        <div class="metric-item">
+                            <label for="in_person_appointments_3"># of In Person Appointments:</label>
+                            <input type="number" id="in_person_appointments_3" name="in_person_appointments_3" min="0" value="0" data-hour="3" data-metric="in_person_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="phone_appointments_3"># of Phone Appointments:</label>
+                            <input type="number" id="phone_appointments_3" name="phone_appointments_3" min="0" value="0" data-hour="3" data-metric="phone_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_sold_3"># of Cars Sold:</label>
+                            <input type="number" id="cars_sold_3" name="cars_sold_3" min="0" value="0" data-hour="3" data-metric="cars_sold">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_delivered_3"># of Cars Delivered:</label>
+                            <input type="number" id="cars_delivered_3" name="cars_delivered_3" min="0" value="0" data-hour="3" data-metric="cars_delivered">
+                        </div>
+                        <div class="metric-item">
+                            <label for="advertisements_posted_3"># of Advertisements Posted:</label>
+                            <input type="number" id="advertisements_posted_3" name="advertisements_posted_3" min="0" value="0" data-hour="3" data-metric="advertisements_posted">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hour 5 -->
+                <div class="hour-section">
+                    <div class="hour-header">
+                        <h3 class="hour-title">Hour 5</h3>
+                        <div class="productivity-rating">
+                            <span>Productivity:</span>
+                            <div class="stars" data-hour="4">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-description">
+                        <label for="description_4">Activity Description:</label>
+                        <textarea id="description_4" name="description_4" placeholder="Describe your activities during this hour..."></textarea>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <label for="quote_calls_4"># of Quote Calls:</label>
+                            <input type="number" id="quote_calls_4" name="quote_calls_4" min="0" value="0" data-hour="4" data-metric="quote_calls">
+                        </div>
+                        <div class="metric-item">
+                            <label for="appointments_generated_4"># of Appointments Generated:</label>
+                            <input type="number" id="appointments_generated_4" name="appointments_generated_4" min="0" value="0" data-hour="4" data-metric="appointments_generated">
+                        </div>
+                        <div class="metric-item">
+                            <label for="in_person_appointments_4"># of In Person Appointments:</label>
+                            <input type="number" id="in_person_appointments_4" name="in_person_appointments_4" min="0" value="0" data-hour="4" data-metric="in_person_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="phone_appointments_4"># of Phone Appointments:</label>
+                            <input type="number" id="phone_appointments_4" name="phone_appointments_4" min="0" value="0" data-hour="4" data-metric="phone_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_sold_4"># of Cars Sold:</label>
+                            <input type="number" id="cars_sold_4" name="cars_sold_4" min="0" value="0" data-hour="4" data-metric="cars_sold">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_delivered_4"># of Cars Delivered:</label>
+                            <input type="number" id="cars_delivered_4" name="cars_delivered_4" min="0" value="0" data-hour="4" data-metric="cars_delivered">
+                        </div>
+                        <div class="metric-item">
+                            <label for="advertisements_posted_4"># of Advertisements Posted:</label>
+                            <input type="number" id="advertisements_posted_4" name="advertisements_posted_4" min="0" value="0" data-hour="4" data-metric="advertisements_posted">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hour 6 -->
+                <div class="hour-section">
+                    <div class="hour-header">
+                        <h3 class="hour-title">Hour 6</h3>
+                        <div class="productivity-rating">
+                            <span>Productivity:</span>
+                            <div class="stars" data-hour="5">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-description">
+                        <label for="description_5">Activity Description:</label>
+                        <textarea id="description_5" name="description_5" placeholder="Describe your activities during this hour..."></textarea>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <label for="quote_calls_5"># of Quote Calls:</label>
+                            <input type="number" id="quote_calls_5" name="quote_calls_5" min="0" value="0" data-hour="5" data-metric="quote_calls">
+                        </div>
+                        <div class="metric-item">
+                            <label for="appointments_generated_5"># of Appointments Generated:</label>
+                            <input type="number" id="appointments_generated_5" name="appointments_generated_5" min="0" value="0" data-hour="5" data-metric="appointments_generated">
+                        </div>
+                        <div class="metric-item">
+                            <label for="in_person_appointments_5"># of In Person Appointments:</label>
+                            <input type="number" id="in_person_appointments_5" name="in_person_appointments_5" min="0" value="0" data-hour="5" data-metric="in_person_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="phone_appointments_5"># of Phone Appointments:</label>
+                            <input type="number" id="phone_appointments_5" name="phone_appointments_5" min="0" value="0" data-hour="5" data-metric="phone_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_sold_5"># of Cars Sold:</label>
+                            <input type="number" id="cars_sold_5" name="cars_sold_5" min="0" value="0" data-hour="5" data-metric="cars_sold">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_delivered_5"># of Cars Delivered:</label>
+                            <input type="number" id="cars_delivered_5" name="cars_delivered_5" min="0" value="0" data-hour="5" data-metric="cars_delivered">
+                        </div>
+                        <div class="metric-item">
+                            <label for="advertisements_posted_5"># of Advertisements Posted:</label>
+                            <input type="number" id="advertisements_posted_5" name="advertisements_posted_5" min="0" value="0" data-hour="5" data-metric="advertisements_posted">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hour 7 -->
+                <div class="hour-section">
+                    <div class="hour-header">
+                        <h3 class="hour-title">Hour 7</h3>
+                        <div class="productivity-rating">
+                            <span>Productivity:</span>
+                            <div class="stars" data-hour="6">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-description">
+                        <label for="description_6">Activity Description:</label>
+                        <textarea id="description_6" name="description_6" placeholder="Describe your activities during this hour..."></textarea>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <label for="quote_calls_6"># of Quote Calls:</label>
+                            <input type="number" id="quote_calls_6" name="quote_calls_6" min="0" value="0" data-hour="6" data-metric="quote_calls">
+                        </div>
+                        <div class="metric-item">
+                            <label for="appointments_generated_6"># of Appointments Generated:</label>
+                            <input type="number" id="appointments_generated_6" name="appointments_generated_6" min="0" value="0" data-hour="6" data-metric="appointments_generated">
+                        </div>
+                        <div class="metric-item">
+                            <label for="in_person_appointments_6"># of In Person Appointments:</label>
+                            <input type="number" id="in_person_appointments_6" name="in_person_appointments_6" min="0" value="0" data-hour="6" data-metric="in_person_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="phone_appointments_6"># of Phone Appointments:</label>
+                            <input type="number" id="phone_appointments_6" name="phone_appointments_6" min="0" value="0" data-hour="6" data-metric="phone_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_sold_6"># of Cars Sold:</label>
+                            <input type="number" id="cars_sold_6" name="cars_sold_6" min="0" value="0" data-hour="6" data-metric="cars_sold">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_delivered_6"># of Cars Delivered:</label>
+                            <input type="number" id="cars_delivered_6" name="cars_delivered_6" min="0" value="0" data-hour="6" data-metric="cars_delivered">
+                        </div>
+                        <div class="metric-item">
+                            <label for="advertisements_posted_6"># of Advertisements Posted:</label>
+                            <input type="number" id="advertisements_posted_6" name="advertisements_posted_6" min="0" value="0" data-hour="6" data-metric="advertisements_posted">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hour 8 -->
+                <div class="hour-section">
+                    <div class="hour-header">
+                        <h3 class="hour-title">Hour 8</h3>
+                        <div class="productivity-rating">
+                            <span>Productivity:</span>
+                            <div class="stars" data-hour="7">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-description">
+                        <label for="description_7">Activity Description:</label>
+                        <textarea id="description_7" name="description_7" placeholder="Describe your activities during this hour..."></textarea>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <label for="quote_calls_7"># of Quote Calls:</label>
+                            <input type="number" id="quote_calls_7" name="quote_calls_7" min="0" value="0" data-hour="7" data-metric="quote_calls">
+                        </div>
+                        <div class="metric-item">
+                            <label for="appointments_generated_7"># of Appointments Generated:</label>
+                            <input type="number" id="appointments_generated_7" name="appointments_generated_7" min="0" value="0" data-hour="7" data-metric="appointments_generated">
+                        </div>
+                        <div class="metric-item">
+                            <label for="in_person_appointments_7"># of In Person Appointments:</label>
+                            <input type="number" id="in_person_appointments_7" name="in_person_appointments_7" min="0" value="0" data-hour="7" data-metric="in_person_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="phone_appointments_7"># of Phone Appointments:</label>
+                            <input type="number" id="phone_appointments_7" name="phone_appointments_7" min="0" value="0" data-hour="7" data-metric="phone_appointments">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_sold_7"># of Cars Sold:</label>
+                            <input type="number" id="cars_sold_7" name="cars_sold_7" min="0" value="0" data-hour="7" data-metric="cars_sold">
+                        </div>
+                        <div class="metric-item">
+                            <label for="cars_delivered_7"># of Cars Delivered:</label>
+                            <input type="number" id="cars_delivered_7" name="cars_delivered_7" min="0" value="0" data-hour="7" data-metric="cars_delivered">
+                        </div>
+                        <div class="metric-item">
+                            <label for="advertisements_posted_7"># of Advertisements Posted:</label>
+                            <input type="number" id="advertisements_posted_7" name="advertisements_posted_7" min="0" value="0" data-hour="7" data-metric="advertisements_posted">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <div class="slack-info">
+                        <div class="slack-status">
+                            <span class="slack-icon">💬</span>
+                            <span class="slack-text">All submissions automatically sent to team Slack channel</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" id="submitBtn">Download Activity Log</button>
+                        <button type="button" id="slackOnlyBtn">Send to Slack Only</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <div id="notification" class="notification hidden">
+        <span id="notificationText"></span>
+        <button id="closeNotification">&times;</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
