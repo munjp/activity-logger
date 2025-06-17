@@ -197,7 +197,7 @@ def verify_location():
         max_distance = 500  # 500m for mobile devices (accurate GPS)
         device_type = "Mobile"
     else:
-        max_distance = 2000  # 2km for PC users (inaccurate WiFi location)
+        max_distance = 3500  # 3.5km for PC users (inaccurate WiFi location)
         device_type = "PC"
     
     print(f"Device detected: {device_type}, Max distance: {max_distance}m")
