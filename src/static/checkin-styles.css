@@ -394,3 +394,45 @@ body {
     }
 }
 
+/* Additional styles for name input field */
+.name-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.name-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+.name-input::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* Update form section spacing for name field */
+.form-section {
+    margin-bottom: 25px;
+}
+
+.form-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Ensure proper spacing between name and dealership fields */
+#userDetailsSection .form-label:first-of-type {
+    margin-bottom: 8px;
+}
+
+#userDetailsSection .form-label:last-of-type {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
